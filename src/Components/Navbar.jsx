@@ -27,16 +27,44 @@ const Navbar = ({ setCategory }) => {
               </div>
             </li>
             <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory('crime')}>
+                crime
+              </div>
+            </li>
+            <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory('domestic')}>
+                domestic
+              </div>
+            </li>
+            <li className="nav-item">
               <div
                 className="nav-link"
-                onClick={() => setCategory('entertainment')}
+                onClick={() => setCategory('education')}
               >
-                entertainment
+                education
+              </div>
+            </li>
+            <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory('food')}>
+                food
               </div>
             </li>
             <li className="nav-item">
               <div className="nav-link" onClick={() => setCategory('health')}>
                 health
+              </div>
+            </li>
+            <li className="nav-item">
+              <div
+                className="nav-link"
+                onClick={() => setCategory('lifestyle')}
+              >
+                lifestyle
+              </div>
+            </li>
+            <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory('politics')}>
+                politics
               </div>
             </li>
             <li className="nav-item">
@@ -55,6 +83,21 @@ const Navbar = ({ setCategory }) => {
                 onClick={() => setCategory('technology')}
               >
                 technology
+              </div>
+            </li>
+            <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory('tourism')}>
+                tourism
+              </div>
+            </li>
+            <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory('world')}>
+                world
+              </div>
+            </li>
+            <li className="nav-item">
+              <div className="nav-link" onClick={() => setCategory('other')}>
+                others
               </div>
             </li>
           </ul>

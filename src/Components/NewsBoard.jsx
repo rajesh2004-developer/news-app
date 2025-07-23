@@ -7,16 +7,18 @@ const NewsBoard = ({ category }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let url = `https://newsapi.org/v2/top-headlines?country=us&category=${
-          category || 'general'
-        }&apiKey=${import.meta.env.VITE_API_KEY}`;
+        let url = `https://newsdata.io/api/1/latest?country=us&category=${
+          category || 'top'
+        }&apikey=${import.meta.env.VITE_API_KEY}
+`;
         const res = await fetch(url);
         if (!res.ok) throw new Error(`Error ${res.status}`);
         const data = await res.json();
-        setArticles(data.articles || []);
+        setArticles(data.results || []);
+        console.log(articles);
       } catch (error) {
         console.error('Fetch error:', error.message);
-        setArticles([]); 
+        setArticles([]);
       }
     };
     fetchData();
@@ -33,8 +35,8 @@ const NewsBoard = ({ category }) => {
             key={index}
             title={news.title}
             description={news.description}
-            src={news.urlToImage}
-            url={news.url}
+            src={news.image_url}
+            url={news.source_url}
           />
         );
       })}

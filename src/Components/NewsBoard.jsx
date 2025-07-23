@@ -5,13 +5,21 @@ const NewsBoard = ({ category }) => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    console.log(category);
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=${
-      category || 'general'
-    }&apiKey=${import.meta.env.VITE_API_KEY}`;
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => setArticles(data.articles));
+    const fetchData = async () => {
+      try {
+        let url = `https://newsapi.org/v2/top-headlines?country=us&category=${
+          category || 'general'
+        }&apiKey=${import.meta.env.VITE_API_KEY}`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`Error ${res.status}`);
+        const data = await res.json();
+        setArticles(data.articles || []);
+      } catch (error) {
+        console.error('Fetch error:', error.message);
+        setArticles([]); 
+      }
+    };
+    fetchData();
   }, [category]);
 
   return (

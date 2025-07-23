@@ -19,7 +19,7 @@ const NewsBoard = ({ category }) => {
       <h2 className="text-center">
         Latest <span className="badge bg-dark">News</span>
       </h2>
-      {articles.map((news, index) => {
+      {articles?.map((news, index) => {
         return (
           <NewsItem
             key={index}

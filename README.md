@@ -1,5 +1,6 @@
 # 📰 NewsApp
 
+[Live now](https://rajesh2004-developer.github.io/news-app/)
 A responsive and lightweight React + Vite application that fetches real-time news using the [NewsAPI.org](https://newsapi.org/) service. Users can select different news categories such as Business, Entertainment, General, Health, Science, Sports, and Technology to view top headlines.
 
 ---
